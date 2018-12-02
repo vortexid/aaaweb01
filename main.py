@@ -13,7 +13,7 @@ def pay(name):
     cur = conn.cursor()
     cur.execute(sql_prihod, ("7020",name,"Prihodi od web stranice", price,));
     conn.commit()
-    return "<h1>"+title+"</h1></br>Hvala "+name+u" - potrošili ste "+str(price)+" Kn !"
+    return  render_template("index.html", naziv=title, cijena=price, ) 
 
 @app.route("/")
 def home():
