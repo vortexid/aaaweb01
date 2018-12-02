@@ -1,0 +1,21 @@
+
+.page {
+   background-image:url(https://elements-cover-images-0.imgix.net/0fcc4b99-6382-40ca-aa15-1b987c45db22?w=1170&fit=max&auto=compress%2Cformat&s=0415124361c2510fa9013502d8d7694b);
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+.panel {
+    margin-left:10%;
+    padding: .7em;
+    font-family:Verdana;
+    width: 80%;
+}
+
+.title_panel {    
+    background: rgb(194, 221, 236);            
+}
+
+.content_panel {    
+    background: ghostwhite;      
+}

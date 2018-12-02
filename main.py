@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import psycopg2
-from  flask import Flask
+from  flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 conn = psycopg2.connect(host="localhost",database="student1",user="student1",password="student1")
@@ -13,11 +13,11 @@ def pay(name):
     cur = conn.cursor()
     cur.execute(sql_prihod, ("7020",name,"Prihodi od web stranice", price,));
     conn.commit()
-    return  render_template("index.html", naziv=title, cijena=price, ) 
+    return "Test"
 
 @app.route("/")
 def home():
-    return "<h1>"+title+"</h1>"
+    return render_template("index.html", naziv=title, cijena=price, ) 
 
 @app.route("/cijena/<cijena>")
 def set_price(cijena):

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
-<html>  
-    <head>{{ naziv }}</head>  
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
     <title>{{ naziv }}</title>
-    <body>
-        <div style="background: rgb(194, 221, 236);border: 1px">{{ naziv }}</div>
-        <div style="background: white;border: 1px">Cijena usluge {{ cijena }}</div>
+</head>
+
+    <body class="page">
+        <div class="panel title_panel">{{ naziv }}</div>
+        <div class="panel content_panel">Cijena usluge {{ cijena }}</div>
     </body>
 </html>
