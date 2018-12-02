@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 conn = psycopg2.connect(host="localhost",database="student1",user="student1",password="student1")
 sql_prihod = """INSERT INTO prihodi (konto, komitent, naziv, iznos) VALUES (%s, %s, %s, %s);"""
-title="Student2";
+title="Autorizacija i autentifikacija";
 price=5.0
 
 @app.route('/<name>')

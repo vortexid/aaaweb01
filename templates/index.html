@@ -3,12 +3,16 @@
 <html>
 
 <head>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>{{ naziv }}</title>
 </head>
 
     <body class="page">
         <div class="panel title_panel">{{ naziv }}</div>
-        <div class="panel content_panel">Cijena usluge {{ cijena }}</div>
+        <div class="panel content_panel">Cijena usluge {{ cijena }} Kn
+                <a class="button">Ok</a>
+                
+        </div>
+        
     </body>
 </html>
