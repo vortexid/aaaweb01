@@ -17,5 +17,9 @@ def pay(name):
 def home():
     return "<h1>"+title+"</h1>"
 
+@app.route("/reports")
+def reports():
+    return "<h1>Reports</h1>"
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5001')
