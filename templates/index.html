@@ -9,13 +9,9 @@
 
     <body class="page">
         <div class="panel title_panel">{{ naziv }}</div>
-        <div class="panel content_panel">
-            {% if mod == 0 %}
+        <div class="panel content_panel">           
             Cijena usluge {{ cijena }} Kn
-                <a class="button">Ok</a>
-            {% else  %}
-                Hvala!
-            {% endif  %}   
+                <a class="button" href="/kupi/{{name}}">Ok</a>           
         </div>
         
     </body>

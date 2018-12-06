@@ -1,5 +1,7 @@
 #-*- coding: utf-8 -*-
 import psycopg2
+import datetime
+import time
 from  flask import Flask, render_template, url_for
 app = Flask(__name__)
 
@@ -8,16 +10,18 @@ sql_prihod = """INSERT INTO prihodi (konto, komitent, naziv, iznos) VALUES (%s, 
 title="Autorizacija i autentifikacija";
 price=5.0
 
-@app.route('/<name>')
-def pay(name):
+@app.route('/kupi/<name>')
+def pay(name):    
     cur = conn.cursor()
     cur.execute(sql_prihod, ("7020",name,"Prihodi od web stranice", price,));
     conn.commit()
-    return render_template("index.html", naziv=title, cijena=price, mod=0 ) 
+    ts = time.time()
+    print datetime.datetime.fromtimestamp(ts).strftime('%d-%m-%Y %H:%M:%S') + " "+name+" je uplatio "+str(price)+" Kn" 
+    return render_template("index.html", naziv=title, cijena=price, name=name, mod=0 ) 
 
 @app.route("/")
 def home():
-    return render_template("index.html", naziv=title, cijena=price, mod=1 ) 
+    return render_template("index.html", naziv=title, mod=1 ) 
 
 @app.route("/cijena/<cijena>")
 def set_price(cijena):
