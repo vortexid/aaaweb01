@@ -21,7 +21,7 @@ def pay(name):
 
 @app.route("/")
 def home():
-    return render_template("index.html", naziv=title, mod=1 ) 
+    return render_template("index.html", naziv=title, cijena=price, mod=1 ) 
 
 @app.route("/cijena/<cijena>")
 def set_price(cijena):
